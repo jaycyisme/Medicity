@@ -27,6 +27,8 @@ return new class extends Migration
             $table->string('doctor_bio')->nullable();
             $table->json('business_hours')->nullable();
 
+            $table->boolean('status')->default(true);
+
             $table->timestamps();
             $table->softDeletes();
         });

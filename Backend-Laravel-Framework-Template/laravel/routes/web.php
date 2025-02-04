@@ -1,39 +1,57 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-// -- Fortify
 use Laravel\Fortify\Features;
-use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
-use Laravel\Fortify\Http\Controllers\ConfirmablePasswordController;
-use Laravel\Fortify\Http\Controllers\ConfirmedPasswordStatusController;
-use Laravel\Fortify\Http\Controllers\ConfirmedTwoFactorAuthenticationController;
-use Laravel\Fortify\Http\Controllers\EmailVerificationNotificationController;
-use Laravel\Fortify\Http\Controllers\EmailVerificationPromptController;
-use Laravel\Fortify\Http\Controllers\NewPasswordController;
-use Laravel\Fortify\Http\Controllers\PasswordController;
-use Laravel\Fortify\Http\Controllers\PasswordResetLinkController;
-use Laravel\Fortify\Http\Controllers\ProfileInformationController;
-use Laravel\Fortify\Http\Controllers\RecoveryCodeController;
-use Laravel\Fortify\Http\Controllers\RegisteredUserController;
-use Laravel\Fortify\Http\Controllers\TwoFactorAuthenticatedSessionController;
-use Laravel\Fortify\Http\Controllers\TwoFactorAuthenticationController;
-use Laravel\Fortify\Http\Controllers\TwoFactorQrCodeController;
-use Laravel\Fortify\Http\Controllers\TwoFactorSecretKeyController;
-use Laravel\Fortify\Http\Controllers\VerifyEmailController;
+// -- Fortify
 use Laravel\Fortify\RoutePath;
-// -- Jetstream
-use Laravel\Jetstream\Http\Controllers\CurrentTeamController;
-use Laravel\Jetstream\Http\Controllers\Livewire\ApiTokenController;
-use Laravel\Jetstream\Http\Controllers\Livewire\PrivacyPolicyController;
-use Laravel\Jetstream\Http\Controllers\Livewire\TeamController;
-use Laravel\Jetstream\Http\Controllers\Livewire\TermsOfServiceController;
-use Laravel\Jetstream\Http\Controllers\Livewire\UserProfileController;
-use Laravel\Jetstream\Http\Controllers\TeamInvitationController;
 use Laravel\Jetstream\Jetstream;
-// -- Của mình
-use App\Http\Controllers\PermissionsController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ChatController;
+use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\RolesController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\PermissionsController;
+use App\Http\Controllers\UserController;
+use Laravel\Fortify\Http\Controllers\PasswordController;
+use Laravel\Fortify\Http\Controllers\NewPasswordController;
+use Laravel\Fortify\Http\Controllers\VerifyEmailController;
+use Laravel\Fortify\Http\Controllers\RecoveryCodeController;
+use Laravel\Jetstream\Http\Controllers\CurrentTeamController;
+use Laravel\Fortify\Http\Controllers\RegisteredUserController;
+use Laravel\Fortify\Http\Controllers\TwoFactorQrCodeController;
+use Laravel\Jetstream\Http\Controllers\Livewire\TeamController;
+use Laravel\Jetstream\Http\Controllers\TeamInvitationController;
+use Laravel\Fortify\Http\Controllers\PasswordResetLinkController;
+use Laravel\Fortify\Http\Controllers\ProfileInformationController;
+// -- Jetstream
+use Laravel\Fortify\Http\Controllers\TwoFactorSecretKeyController;
+use Laravel\Fortify\Http\Controllers\ConfirmablePasswordController;
+use Laravel\Jetstream\Http\Controllers\Livewire\ApiTokenController;
+use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
+use Laravel\Jetstream\Http\Controllers\Livewire\UserProfileController;
+use Laravel\Fortify\Http\Controllers\ConfirmedPasswordStatusController;
+use Laravel\Fortify\Http\Controllers\EmailVerificationPromptController;
+use Laravel\Fortify\Http\Controllers\TwoFactorAuthenticationController;
+// -- Của mình
+use Laravel\Jetstream\Http\Controllers\Livewire\PrivacyPolicyController;
+use Laravel\Jetstream\Http\Controllers\Livewire\TermsOfServiceController;
+use Laravel\Fortify\Http\Controllers\EmailVerificationNotificationController;
+use Laravel\Fortify\Http\Controllers\TwoFactorAuthenticatedSessionController;
+use Laravel\Fortify\Http\Controllers\ConfirmedTwoFactorAuthenticationController;
+
+
+
+
+Route::get('/admin/fetch-messages', [ChatController::class, 'fetchMessages'])->name('admin.fetchMessages');
+Route::post('/admin/send-message', [ChatController::class, 'sendMessage'])->name('admin.sendMessage');
+
+
+Route::get('/chatzy/admin/chats', [DoctorController::class, 'chats'])->name('admin.chats');
+
+Route::get('/index.html', function () {
+    return view('medicity.index');
+})->name('index');
+
+
 
 // -- Jetstream
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',])->group(function () {
