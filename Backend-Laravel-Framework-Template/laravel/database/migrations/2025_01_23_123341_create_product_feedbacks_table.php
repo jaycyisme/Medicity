@@ -15,9 +15,10 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('product_id')->constrained('products')->onDelete('cascade');
-            $table->integer('start');
+            $table->integer('star');
             $table->string('title');
-            $table->longText('description');
+            $table->longText('review');
+            $table->boolean('is_active');
             $table->timestamps();
         });
     }

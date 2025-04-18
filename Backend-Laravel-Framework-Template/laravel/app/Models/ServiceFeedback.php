@@ -13,8 +13,10 @@ class ServiceFeedback extends Model
     protected $fillable = [
         'service_id',
         'user_id',
+        'star',
         'title',
         'review',
+        'is_active',
     ];
 
     public function user()

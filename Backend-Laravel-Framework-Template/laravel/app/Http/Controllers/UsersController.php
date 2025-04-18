@@ -36,7 +36,9 @@ class UsersController extends Controller
     {
         $user->update($request->validated());
         $user->syncRoles($request->get('role'));
-        return redirect()->route('users.index')->withSuccess('Tài khoản đã được cập nhật thành công.');
+        $user->consultation_type_id = 1;
+        $user->save();
+        return redirect()->route('patient.profile-setting')->withSuccess('Tài khoản đã được cập nhật thành công.');
     }
 
     public function destroy(User $user)

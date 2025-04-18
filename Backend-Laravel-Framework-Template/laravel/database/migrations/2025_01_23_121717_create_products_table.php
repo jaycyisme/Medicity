@@ -14,11 +14,9 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignId('sub_category_id')->constrained('sub_categories')->onDelete('cascade');
+            $table->foreignId('category_id')->constrained('categories')->onDelete('cascade');
             $table->foreignId('brand_id')->constrained('brands')->onDelete('cascade');
             $table->foreignId('speciality_id')->nullable()->constrained('specialities')->onDelete('cascade');
-            $table->foreignId('size_id')->nullable()->constrained('sizes')->onDelete('cascade');
-            $table->foreignId('color_id')->nullable()->constrained('colors')->onDelete('cascade');
             $table->longText('tag')->nullable();
             $table->longText('slug');
             $table->double('base_price');
@@ -30,7 +28,6 @@ return new class extends Migration
             $table->longText('manufacturing_info');
             $table->longText('faqs')->nullable();
             $table->string('thumbnail');
-            $table->string('size_image');
             $table->boolean('is_prescription')->default(false);
             $table->timestamps();
             $table->softDeletes();

@@ -13,14 +13,21 @@ class Service extends Model
     protected $fillable = [
         'thumbnail',
         'name',
+        'duration',
         'price',
         'description',
         'clinic_id',
+        'speciality_id'
     ];
 
     public function clinic()
     {
         return $this->belongsTo(Clinic::class, 'clinic_id');
+    }
+
+    public function speciality()
+    {
+        return $this->belongsTo(Speciality::class, 'speciality_id');
     }
 
 

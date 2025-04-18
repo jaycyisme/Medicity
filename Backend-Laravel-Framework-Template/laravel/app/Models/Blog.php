@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Blog extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory;
     protected $table = 'blogs';
 
     protected $fillable = [
@@ -16,11 +16,13 @@ class Blog extends Model
         'title',
         'content',
         'thumbnail',
-        'author',
+        'author_name',
+        'author_image',
+        'author_overview',
     ];
 
     public function blogCategory()
     {
-        return $this->belongsTo(BlogCategory::class, 'blog_category_id');
+        return $this->belongsTo(BlogCategory::class, 'blog_category_id')->withTrashed();
     }
 }

@@ -14,15 +14,12 @@ return new class extends Migration
         Schema::create('clinics', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('sub_name')->nullable();
-            $table->string('address_detail');
-            $table->string('phone');
-            $table->string('city');
-            $table->string('district');
-            $table->string('ward');
-            $table->string('coordinates')->nullable();
+            $table->string('phone_number');
+            $table->string('image_url');
+            $table->longText('address_detail');
+            $table->longText('coordinates')->nullable();
+            $table->longText('about_me');
             $table->json('business_hour');
-            $table->string('image_url')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

@@ -25,10 +25,11 @@ return new class extends Migration
             $table->longText('doctor_name');
             $table->longText('doctor_image');
             $table->longText('doctor_overview');
+            $table->longText('meal_plan');
             $table->foreignId('body_part_id')->nullable()->constrained('body_parts')->onDelete('set null');
             $table->foreignId('target_group_id')->nullable()->constrained('target_groups')->onDelete('set null');
-            $table->foreignId('seasonal_group_id')->nullable()->constrained('seasonal_diseases')->onDelete('set null');
-            $table->foreignId('speciality_group_id')->nullable()->constrained('specialities')->onDelete('set null');
+            $table->foreignId('seasonal_id')->nullable()->constrained('seasonal_diseases')->onDelete('set null');
+            $table->foreignId('speciality_id')->nullable()->constrained('specialities')->onDelete('set null');
             $table->timestamps();
         });
     }

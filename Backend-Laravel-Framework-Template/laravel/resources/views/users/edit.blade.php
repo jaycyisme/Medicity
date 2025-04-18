@@ -8,7 +8,7 @@
             <div class="card-body">
                 <div class="text-center mt-3">
                     <div class="chat-avtar d-inline-flex mx-auto">
-                        <img class="rounded-circle img-fluid wid-90 img-thumbnail" src="@if(isset($user->profile_cover_path)){{ asset('storage/'.$user->profile_cover_path) }}@else{{ asset('assets/images/user/avatar-1.jpg') }}@endif" alt="{{ $user->name }}">
+                        <img class="rounded-circle img-fluid wid-90 img-thumbnail" src="@if(isset($user->profile_photo_path)){{ asset('storage/'.$user->profile_photo_path) }}@else{{ asset('assets/images/user/avatar-1.jpg') }}@endif" alt="{{ $user->name }}">
                     </div>
                     <h5 class="mb-0">{{ $user->name }}</h5>
                 </div>
@@ -39,6 +39,10 @@
                             <option value="{{ $role->name }}" {{ in_array($role->name, $userRole) ? 'selected' : '' }}>{{ $role->name }}</option>
                             @endforeach
                         </select>
+                    </div>
+                    <div class="mb-3">
+                        <x-label for="name" value="Price" />
+                        <x-input type="number" id="price_per_session" name="price_per_session" value="{{ $user->price_per_session }}" />
                     </div>
                     <div class="mb-3">
                         <x-button class="btn-primary" type="submit">Hoàn tất chỉnh sửa</x-button>

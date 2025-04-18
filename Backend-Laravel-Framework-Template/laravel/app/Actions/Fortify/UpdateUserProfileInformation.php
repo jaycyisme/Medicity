@@ -36,6 +36,10 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
                 'email' => $input['email'],
             ])->save();
         }
+
+        if ($user->hasRole('Thành viên')) {
+            redirect()->route('patient.profile-setting')->with('success', 'Profile updated successfully.');
+        }
     }
 
     /**

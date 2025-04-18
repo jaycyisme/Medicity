@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('doctor_insurances', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('description');
             $table->string('image_url');
             $table->foreignId('doctor_id')->constrained('users')->onDelete('cascade');
             $table->timestamps();

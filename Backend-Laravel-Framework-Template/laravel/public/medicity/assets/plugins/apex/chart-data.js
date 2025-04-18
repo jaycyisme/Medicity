@@ -114,7 +114,7 @@ var options = {
     data: [140,100,180,130,100,130]
   }],
     chart: {
-    height: 300,
+    height: 306,
     type: 'bar',
     events: {
       click: function(chart, w, e) {
@@ -123,7 +123,7 @@ var options = {
     }
   },
   fill: {
-    colors: ['#E8F1FF']
+    colors: ['#0E82FD']
 },
   plotOptions: {
     bar: {
@@ -165,7 +165,7 @@ var options = {
 }],
   chart: {
   type: 'bar',
-  height: 350
+  height: 306
 },
 plotOptions: {
   bar: {
@@ -191,7 +191,7 @@ xaxis: {
 
 fill: {
   opacity: 1,
-  colors: ['#F1F5F9'],
+  colors: ['#0E82FD'],
 },
 states: {
   hover: {

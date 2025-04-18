@@ -14,6 +14,8 @@ class DoctorExperience extends Model
         'doctor_id',
         'hospital_name',
         'hospital_image_url',
+        'year_of_experience',
+        'location',
         'specialities',
         'start_time',
         'end_time',

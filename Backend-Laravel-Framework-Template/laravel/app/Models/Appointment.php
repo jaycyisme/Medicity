@@ -14,32 +14,78 @@ class Appointment extends Model
     protected $fillable = [
         'user_id',
         'doctor_id',
-        'appointment_status_id',
-        'appointment_request_type_id',
+        'status_id',
+        'type_id',
         'business_hour',
+        'appointment_code',
+        'clinic_id',
+
+        'service_id',
+        'speciality_id',
+        'patient_name',
+        'patient_phone',
+        'patient_email',
+        'patient_symptoms',
+        'patient_province',
+        'patient_district',
+        'patient_ward',
+        'patient_address_detail',
+        'patient_reason_visit',
+        'symtom_image_id',
+        'appointment_price',
+        'appointment_tax',
+        'appointment_discount',
+        'appointment_final_price',
+        'payment_method_id',
+
     ];
 
     protected $casts = [
         'business_hour' => 'array',
     ];
 
+    public function symptomImages()
+    {
+        return $this->hasMany(SymptomImage::class);
+    }
+
     public function user()
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(User::class, 'user_id')->withTrashed();
     }
 
     public function doctor()
     {
-        return $this->belongsTo(User::class, 'doctor_id');
+        return $this->belongsTo(User::class, 'doctor_id')->withTrashed();
     }
 
     public function appointmentStatus()
     {
-        return $this->belongsTo(AppointmentStatus::class, 'appointment_status_id');
+        return $this->belongsTo(AppointmentStatus::class, 'status_id');
     }
 
     public function appointmentRequestType()
     {
-        return $this->belongsTo(AppointmentRequestType::class, 'appointment_request_type_id');
+        return $this->belongsTo(ConsultationType::class, 'type_id');
+    }
+
+    public function clinic()
+    {
+        return $this->belongsTo(Clinic::class, 'clinic_id');
+    }
+
+    public function service()
+    {
+        return $this->belongsTo(Service::class, 'service_id');
+    }
+
+    public function speciality()
+    {
+        return $this->belongsTo(Speciality::class, 'speciality_id');
+    }
+
+    public function paymentMethod()
+    {
+        return $this->belongsTo(PaymentMethod::class, 'payment_method_id');
     }
 }

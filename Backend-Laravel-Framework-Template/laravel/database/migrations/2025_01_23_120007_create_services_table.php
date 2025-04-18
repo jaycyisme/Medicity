@@ -15,9 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('thumbnail');
             $table->string('name');
+            $table->integer('duration');
             $table->double('price');
-            $table->string('description');
+            $table->longText('description');
             $table->foreignId('clinic_id')->constrained('clinics')->onDelete('cascade');
+            $table->foreignId('speciality_id')->constrained('specialities')->onDelete('cascade');
             $table->timestamps();
         });
     }

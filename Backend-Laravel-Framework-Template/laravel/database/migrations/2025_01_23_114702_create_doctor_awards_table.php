@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('doctor_id')->constrained('users')->onDelete('cascade');
             $table->string('name');
-            $table->string('image_url')->nullable();
-            $table->string('description')->nullable();
+            $table->string('year');
+            $table->longText('description')->nullable();
             $table->timestamps();
         });
     }

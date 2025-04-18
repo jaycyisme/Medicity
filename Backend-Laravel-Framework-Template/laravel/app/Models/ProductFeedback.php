@@ -13,9 +13,10 @@ class ProductFeedback extends Model
     protected $fillable = [
         'user_id',
         'product_id',
-        'start',
+        'star',
         'title',
-        'description',
+        'review',
+        'is_active'
     ];
 
     public function user()

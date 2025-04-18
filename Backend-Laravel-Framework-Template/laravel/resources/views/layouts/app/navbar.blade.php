@@ -2,37 +2,37 @@
     <div class="navbar-wrapper">
         <div class="m-header">
             <a href="/" class="b-brand text-primary">
-                <img src="https://hoanganhgaming.com/logo.png" alt="logo image" class="logo-lg" style="width:64px;" />
+                <img src="{{ asset('assets/images/Medicity.jpg') }}" alt="logo image" class="logo-lg" style="width:150px;" />
             </a>
         </div>
         <div class="navbar-content">
             <ul class="pc-navbar">
                 <li class="pc-item pc-caption">
-                    <label>Danh mục chính</label>
+                    <label>Sidebar</label>
                 </li>
                 <li class="pc-item">
-                    <a href="/" class="pc-link">
+                    <a href="{{ route('dashboard') }}" class="pc-link">
                         <span class="pc-micon">
                             <i class="ph-duotone ph-gauge"></i>
                         </span>
-                        <span class="pc-mtext">Bảng điều khiển</span>
+                        <span class="pc-mtext">Dashboard</span>
                     </a>
                 </li>
                 @role('Quản trị viên')
                 <li class="pc-item pc-caption">
-                    <label>Quản trị hệ thống</label>
+                    <label>System Management</label>
                 </li>
                 <li class="pc-item pc-hasmenu">
                     <a href="#" class="pc-link">
                         <span class="pc-micon">
                             <i class="ph-duotone ph-user-circle-gear"></i>
                         </span>
-                        <span class="pc-mtext">Quyền và Vai trò</span>
+                        <span class="pc-mtext">Permission and Role</span>
                         <span class="pc-arrow"><i data-feather="chevron-right"></i></span>
                     </a>
                     <ul class="pc-submenu">
-                        <li class="pc-item"><a class="pc-link" href="{{ route('permissions.index') }}">Quyền</a></li>
-                        <li class="pc-item"><a class="pc-link" href="{{ route('roles.index') }}">Vai trò</a></li>
+                        <li class="pc-item"><a class="pc-link" href="{{ route('permissions.index') }}">Permission</a></li>
+                        <li class="pc-item"><a class="pc-link" href="{{ route('roles.index') }}">Role</a></li>
                     </ul>
                 </li>
                 <li class="pc-item">
@@ -40,9 +40,161 @@
                         <span class="pc-micon">
                             <i class="ph-duotone ph-user"></i>
                         </span>
-                        <span class="pc-mtext">Người dùng</span>
+                        <span class="pc-mtext">User</span>
                     </a>
                 </li>
+                <li class="pc-item">
+                    <a href="{{ route('speciality.index') }}" class="pc-link">
+                        <span class="pc-micon">
+                            <i class="ph-duotone ph-heartbeat"></i>
+                        </span>
+                        <span class="pc-mtext">Speciality</span>
+                    </a>
+                </li>
+                <li class="pc-item">
+                    <a href="{{ route('clinic.index') }}" class="pc-link">
+                        <span class="pc-micon">
+                            <i class="ph-duotone ph-first-aid-kit"></i>
+                        </span>
+                        <span class="pc-mtext">Clinic</span>
+                    </a>
+                </li>
+                <li class="pc-item">
+                    <a href="{{ route('service.index') }}" class="pc-link">
+                        <span class="pc-micon">
+                            <i class="ph-duotone ph-first-aid"></i>
+                        </span>
+                        <span class="pc-mtext">Service</span>
+                    </a>
+                </li>
+                <li class="pc-item">
+                    <a href="{{ route('laboratory-test.index') }}" class="pc-link">
+                        <span class="pc-micon">
+                            <i class="ph-duotone ph-test-tube"></i>
+                        </span>
+                        <span class="pc-mtext">Laboratory Test</span>
+                    </a>
+                </li>
+                <li class="pc-item">
+                    <a href="{{ route('appointment.index') }}" class="pc-link">
+                        <span class="pc-micon">
+                            <i class="ph-duotone ph-calendar-check"></i>
+                        </span>
+                        <span class="pc-mtext">Appointment</span>
+                    </a>
+                </li>
+                <li class="pc-item">
+                    <a href="{{ route('prescription.index') }}" class="pc-link">
+                        <span class="pc-micon">
+                            <i class="ph-duotone ph-file-arrow-down"></i>
+                        </span>
+                        <span class="pc-mtext">Prescription</span>
+                    </a>
+                </li>
+                <li class="pc-item pc-caption">
+                    <label>Disease</label>
+                </li>
+                <li class="pc-item">
+                    <a href="{{ route('bodypart.index') }}" class="pc-link">
+                        <span class="pc-micon">
+                            <i class="ph-duotone ph-person-arms-spread"></i>
+                        </span>
+                        <span class="pc-mtext">Body Part</span>
+                    </a>
+                </li>
+                <li class="pc-item">
+                    <a href="{{ route('targetgroup.index') }}" class="pc-link">
+                        <span class="pc-micon">
+                            <i class="ph-duotone ph-target"></i>
+                        </span>
+                        <span class="pc-mtext">Target Group</span>
+                    </a>
+                </li>
+                <li class="pc-item">
+                    <a href="{{ route('seasonal.index') }}" class="pc-link">
+                        <span class="pc-micon">
+                            <i class="ph-duotone ph-wind"></i>
+                        </span>
+                        <span class="pc-mtext">Seasonal</span>
+                    </a>
+                </li>
+                <li class="pc-item">
+                    <a href="{{ route('disease.index') }}" class="pc-link">
+                        <span class="pc-micon">
+                            <i class="ph-duotone ph-virus"></i>
+                        </span>
+                        <span class="pc-mtext">Disease</span>
+                    </a>
+                </li>
+
+                <li class="pc-item pc-caption">
+                    <label>Product</label>
+                </li>
+                <li class="pc-item">
+                    <a href="{{ route('category.index') }}" class="pc-link">
+                        <span class="pc-micon">
+                            <i class="ph-duotone ph-stack-simple"></i>
+                        </span>
+                        <span class="pc-mtext">Category</span>
+                    </a>
+                </li>
+                <li class="pc-item">
+                    <a href="{{ route('brand.index') }}" class="pc-link">
+                        <span class="pc-micon">
+                            <i class="ph-duotone ph-apple-logo"></i>
+                        </span>
+                        <span class="pc-mtext">Brand</span>
+                    </a>
+                </li>
+                <li class="pc-item">
+                    <a href="{{ route('product.index') }}" class="pc-link">
+                        <span class="pc-micon">
+                            <i class="ph-duotone ph-t-shirt"></i>
+                        </span>
+                        <span class="pc-mtext">Product</span>
+                    </a>
+                </li>
+
+                <li class="pc-item pc-caption">
+                    <label>Order</label>
+                </li>
+                <li class="pc-item">
+                    <a href="{{ route('coupon.index') }}" class="pc-link">
+                        <span class="pc-micon">
+                            <i class="ph-duotone ph-money"></i>
+                        </span>
+                        <span class="pc-mtext">Coupon</span>
+                    </a>
+                </li>
+                <li class="pc-item">
+                    <a href="{{ route('order.index') }}" class="pc-link">
+                        <span class="pc-micon">
+                            <i class="ph-duotone ph-handbag-simple"></i>
+                        </span>
+                        <span class="pc-mtext">Order</span>
+                    </a>
+                </li>
+
+                <li class="pc-item pc-caption">
+                    <label>Blog</label>
+                </li>
+                <li class="pc-item">
+                    <a href="{{ route('blogcategory.index') }}" class="pc-link">
+                        <span class="pc-micon">
+                            <i class="ph-duotone ph-book-bookmark"></i>
+                        </span>
+                        <span class="pc-mtext">Blog Category</span>
+                    </a>
+                </li>
+                <li class="pc-item">
+                    <a href="{{ route('blog.index') }}" class="pc-link">
+                        <span class="pc-micon">
+                            <i class="ph-duotone ph-books"></i>
+                        </span>
+                        <span class="pc-mtext">Blog</span>
+                    </a>
+                </li>
+
                 @endrole
             </ul>
         </div>
@@ -63,7 +215,7 @@
                                     </div>
                                     <div class="flex-shrink-0">
                                         <div class="btn btn-icon btn-link-secondary avtar">
-                                            <i class="ph-duotone ph-windows-logo"></i>    
+                                            <i class="ph-duotone ph-windows-logo"></i>
                                         </div>
                                     </div>
                                 </div>

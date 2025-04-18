@@ -13,7 +13,7 @@ class DoctorAward extends Model
     protected $fillable = [
         'doctor_id',
         'name',
-        'image_url',
+        'year',
         'description',
     ];
 

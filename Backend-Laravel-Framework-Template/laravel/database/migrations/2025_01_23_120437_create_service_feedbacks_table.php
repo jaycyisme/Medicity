@@ -15,8 +15,10 @@ return new class extends Migration
             $table->id();
             $table->foreignId('service_id')->constrained('services')->onDelete('cascade');
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->integer('star');
             $table->string('title');
-            $table->text('review');
+            $table->longText('review');
+            $table->boolean('is_active')->default(false);
             $table->timestamps();
         });
     }

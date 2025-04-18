@@ -16,8 +16,8 @@ class Category extends Model
         'image_url',
     ];
 
-    public function subCategories()
+    public function products()
     {
-        return $this->hasMany(SubCategory::class)->withTrashed();
+        return $this->hasMany(Product::class)->withTrashed();
     }
 }

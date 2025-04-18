@@ -21,15 +21,17 @@ class Chat extends Model
         return $this->belongsTo(User::class, 'receiver_id');
     }
 
-
-
     public function receiverProfilee()
     {
-        return $this->belongsTo(User::class, 'receiver_id', 'id')->select(['id', 'name']);
+        return $this->belongsTo(User::class, 'receiver_id', 'id')
+            ->select(['id', 'name'])
+            ->withDefault(['name' => 'Unknown User']);
     }
 
     public function senderProfilee()
     {
-        return $this->belongsTo(User::class, 'sender_id', 'id')->select(['id', 'name']);
+        return $this->belongsTo(User::class, 'sender_id', 'id')
+            ->select(['id', 'name'])
+            ->withDefault(['name' => 'Unknown User']);
     }
 }

@@ -32,37 +32,48 @@ class User extends Authenticatable
         'email',
         'password',
         'gender',
-        'speciality_id',
+        // 'speciality_id',
         'consultation_type_id',
         'doctor_bio',
         'business_hours',
+        'languages',
+        'designation',
+        'phone_number',
+        'price_per_session'
     ];
 
-    public function speciality()
+    // public function speciality()
+    // {
+    //     return $this->belongsTo(Category::class, 'speciality_id');
+    // }
+
+    public function getUnreadMessagesAttribute()
     {
-        return $this->belongsTo(Category::class, 'speciality_id');
+        return Chat::where('receiver_id', $this->id)
+            ->where('seen', false)
+            ->count();
     }
 
     public function consultationType()
     {
-        return $this->belongsTo(Category::class, 'consultation_type_id');
+        return $this->belongsTo(ConsultationType::class, 'consultation_type_id');
     }
 
 
 
     public function doctorExperiences()
     {
-        return $this->hasMany(DoctorExperience::class)->withTrashed();
+        return $this->hasMany(DoctorExperience::class, 'doctor_id');
     }
 
     public function doctorInsurances()
     {
-        return $this->hasMany(DoctorInsurance::class)->withTrashed();
+        return $this->hasMany(DoctorInsurance::class, 'doctor_id');
     }
 
     public function doctorServices()
     {
-        return $this->hasMany(DoctorService::class)->withTrashed();
+        return $this->hasMany(DoctorService::class, 'doctor_id');
     }
 
     public function serviceFeedbacks()
@@ -72,77 +83,92 @@ class User extends Authenticatable
 
     public function doctorClinics()
     {
-        return $this->hasMany(DoctorClinic::class)->withTrashed();
+        return $this->hasMany(DoctorClinic::class, 'doctor_id');
     }
 
     public function doctorMemberships()
     {
-        return $this->hasMany(DoctorMembership::class)->withTrashed();
+        return $this->hasMany(DoctorMembership::class, 'doctor_id');
     }
 
     public function doctorAwards()
     {
-        return $this->hasMany(DoctorAward::class)->withTrashed();
+        return $this->hasMany(DoctorAward::class, 'doctor_id');
     }
 
     public function doctorSocialMedias()
     {
-        return $this->hasMany(DoctorSocialMedia::class)->withTrashed();
+        return $this->hasMany(DoctorSocialMedia::class, 'doctor_id');
     }
 
     public function deseaseDoctors()
     {
-        return $this->hasMany(DiseaseDoctor::class)->withTrashed();
+        return $this->hasMany(DiseaseDoctor::class, 'doctor_id');
     }
 
     public function doctorFeedbacks()
     {
-        return $this->hasMany(DoctorFeedback::class)->withTrashed();
+        return $this->hasMany(DoctorFeedback::class, 'doctor_id');
+    }
+
+    public function patientFeedbacks()
+    {
+        return $this->hasMany(DoctorFeedback::class, 'patient_id');
     }
 
     public function doctorSpecialities()
     {
-        return $this->hasMany(DoctorSpeciality::class)->withTrashed();
+        return $this->hasMany(DoctorSpeciality::class, 'doctor_id');
     }
 
     public function addresses()
     {
-        return $this->hasMany(Address::class)->withTrashed();
+        return $this->hasMany(Address::class);
     }
 
     public function calculateResults()
     {
-        return $this->hasMany(CalculateResult::class)->withTrashed();
+        return $this->hasMany(CalculateResult::class);
     }
 
     public function medicalRecords()
     {
-        return $this->hasMany(MedicalRecord::class)->withTrashed();
+        return $this->hasMany(MedicalRecord::class, 'patient_id');
     }
 
     public function doctorFavourites()
     {
-        return $this->hasMany(DoctorFavourite::class)->withTrashed();
+        return $this->hasMany(DoctorFavourite::class, 'doctor_id');
+    }
+
+    public function patientFavourites()
+    {
+        return $this->hasMany(DoctorFavourite::class, 'patient_id');
     }
 
     public function patientDependants()
     {
-        return $this->hasMany(PatientDependant::class)->withTrashed();
+        return $this->hasMany(PatientDependant::class, 'patient_id');
     }
 
     public function productFeedbacks()
     {
-        return $this->hasMany(ProductFeedback::class)->withTrashed();
+        return $this->hasMany(ProductFeedback::class);
     }
 
     public function appointments()
     {
-        return $this->hasMany(Appointment::class)->withTrashed();
+        return $this->hasMany(Appointment::class);
+    }
+
+    public function doctorAppointments()
+    {
+        return $this->hasMany(Appointment::class, 'doctor_id');
     }
 
     public function orders()
     {
-        return $this->hasMany(Order::class)->withTrashed();
+        return $this->hasMany(Order::class);
     }
 
 

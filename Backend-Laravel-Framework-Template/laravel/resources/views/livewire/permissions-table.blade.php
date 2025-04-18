@@ -1,6 +1,6 @@
 <div class="table-responsive">
     <div class="mb-3">
-        <x-input type="text" id="search" name="search" wire:model.live="search" placeholder="Tìm kiếm..." />
+        <x-input type="text" id="search" name="search" wire:model.live="search" placeholder="Search..." />
     </div>
     <table class="table table-bordered">
         <thead>

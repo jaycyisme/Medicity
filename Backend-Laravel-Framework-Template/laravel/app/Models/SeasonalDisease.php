@@ -14,6 +14,8 @@ class SeasonalDisease extends Model
         'name',
         'image_url',
         'description',
+        'start_at',
+        'end_at',
     ];
 
     public function diseases()

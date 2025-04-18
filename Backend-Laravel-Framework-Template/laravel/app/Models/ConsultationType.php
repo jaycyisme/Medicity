@@ -14,8 +14,8 @@ class ConsultationType extends Model
         'name',
     ];
 
-    public function user()
+    public function users()
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->hasMany(User::class);
     }
 }

@@ -16,6 +16,7 @@ class DoctorFeedback extends Model
         'star',
         'title',
         'review_detail',
+        'is_active',
     ];
 
     public function patient()

@@ -15,8 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('image_url');
+            $table->string('sub_image_url');
             $table->string('description');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

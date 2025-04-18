@@ -17,7 +17,8 @@ return new class extends Migration
             $table->foreignId('patient_id')->constrained('users')->onDelete('cascade');
             $table->integer('star');
             $table->string('title');
-            $table->string('review_detail');
+            $table->longText('review_detail');
+            $table->boolean('is_active')->default(false);
             $table->timestamps();
         });
     }

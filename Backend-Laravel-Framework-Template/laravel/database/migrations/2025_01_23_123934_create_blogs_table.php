@@ -17,9 +17,10 @@ return new class extends Migration
             $table->string('title');
             $table->longText('content');
             $table->string('thumbnail');
-            $table->string('author');
+            $table->string('author_name');
+            $table->string('author_image');
+            $table->string('author_overview');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 

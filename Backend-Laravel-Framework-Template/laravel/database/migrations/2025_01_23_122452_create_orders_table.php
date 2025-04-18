@@ -33,7 +33,7 @@ return new class extends Migration
             $table->string('shipping_ward');
             $table->longText('shipping_detail');
             $table->string('shipping_phone');
-            $table->double('shipping_fee')->default(0);
+            $table->double('shipping_fee')->nullable()->default(0);
             $table->timestamps();
             $table->softDeletes();
         });

@@ -18,6 +18,6 @@ class BlogCategory extends Model
 
     public function blogs()
     {
-        return $this->hasMany(Blog::class)->withTrashed();
+        return $this->hasMany(Blog::class);
     }
 }

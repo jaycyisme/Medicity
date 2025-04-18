@@ -41,6 +41,16 @@ class ProductVariant extends Model
         return $this->belongsTo(PackagingType::class, 'packaging_type_id');
     }
 
+    public function color()
+    {
+        return $this->belongsTo(Color::class, 'color_id');
+    }
+
+    public function size()
+    {
+        return $this->belongsTo(Size::class, 'size_id');
+    }
+
 
 
     public function orderItems()

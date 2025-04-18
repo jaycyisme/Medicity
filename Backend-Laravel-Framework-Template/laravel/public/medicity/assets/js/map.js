@@ -10,25 +10,21 @@ var bounds = new google.maps.LatLngBounds();
 var map, current = 0;
 var locations =[{
 	"id":"01",
-	"doc_name":"Dr. Ruby Perrin",
-	"speciality":"MDS - Periodontology and Oral Implantology, BDS",
-	"address":"Florida, USA",
-	"next_available":"Available on Fri, 22 Mar",
-	"amount":"$300 - $1000",
+	"doc_name":"Dr. Michael Brown",
+	"speciality":"Psychologist",
+	"address":"Minneapolis, MN",
 	"lat":53.470692,
 	"lng":-2.220328,
 	"icons":"default",
 	"profile_link":"profile.html",
 	"total_review":"17",
-	"image":'assets/img/doctors/doctor-01.jpg'
+	"image":'assets/img/doctor-grid/doctor-grid-01.jpg'
 	}, {
 		
 	"id":"02",
 	"doc_name":"Dr. Darren Elder",
-	"speciality":"BDS, MDS - Oral & Maxillofacial Surgery",
+	"speciality":"Psychologist",
 	"address":"Newyork, USA",
-	"next_available":"Available on Fri, 23 Mar",
-	"amount":"$50 - $300",
 	"lat":53.469189,
 	"lng":-2.199262,
 	"icons":"default",
@@ -38,10 +34,8 @@ var locations =[{
 	}, {
 	"id":"03",
 	"doc_name":"Dr. Deborah Angel",
-	"speciality":"MBBS, MD - General Medicine, DNB - Cardiology",
+	"speciality":"Psychologist",
 	"address":"Georgia, USA",
-	"next_available":"Available on Fri, 24 Mar",
-	"amount":"$100 - $400",
 	"lat":53.468665,
 	"lng":-2.189269,
 	"icons":"default",
@@ -51,10 +45,8 @@ var locations =[{
 	}, {
 	"id":"04",
 	"doc_name":"Dr. Sofia Brient",
-	"speciality":"MBBS, MS - General Surgery, MCh - Urology",
+	"speciality":"Psychologist",
 	"address":"Louisiana, USA",
-	"next_available":"Available on Fri, 25 Mar",
-	"amount":"$150 - $250",
 	"lat":53.463894,
 	"lng":-2.177880,
 	"icons":"default",
@@ -64,10 +56,8 @@ var locations =[{
 	}, {
 	"id":"05",
 	"doc_name":"Dr. Marvin Campbell",
-	"speciality":"MBBS, MD - Ophthalmology, DNB - Ophthalmology",
+	"speciality":"Psychologist",
 	"address":"Michigan, USA",
-	"next_available":"Available on Fri, 25 Mar",
-	"amount":"$50 - $700",
 	"lat":53.466359,
 	"lng":-2.213314,
 	"icons":"default",
@@ -77,10 +67,8 @@ var locations =[{
 	}, {
 	"id":"06",
 	"doc_name":"Dr. Katharine Berthold",
-	"speciality":"MS - Orthopaedics, MBBS, M.Ch - Orthopaedics",
+	"speciality":"Psychologist",
 	"address":"Texas, USA",
-	"next_available":"Available on Fri, 25 Mar",
-	"amount":"$100 - $500",
 	"lat":53.463906,
 	"lng":-2.213271,
 	"icons":"default",
@@ -90,10 +78,8 @@ var locations =[{
 	}, {
 	"id":"07",
 	"doc_name":"Dr. Linda Tobin",
-	"speciality":"MBBS, MD - General Medicine, DM - Neurology",
+	"speciality":"Psychologist",
 	"address":"Kansas, USA",
-	"next_available":"Available on Fri, 25 Mar",
-	"amount":"$100 - $1000",
 	"lat":53.461974,
 	"lng":-2.210661,
 	"icons":"default",
@@ -103,10 +89,8 @@ var locations =[{
 	}, {
 	"id":"08",
 	"doc_name":"Dr. Paul Richard",
-	"speciality":"MDS - Periodontology and Oral Implantology, BDS",
+	"speciality":"Psychologist",
 	"address":"California, USA",
-	"next_available":"Available on Fri, 25 Mar",
-	"amount":"$100 - $400",
 	"lat":53.458785,
 	"lng":-2.188532,
 	"icons":"default",
@@ -116,10 +100,8 @@ var locations =[{
 	}, {
 	"id":"09",
 	"doc_name":"Dr. John Gibbs",
-	"speciality":"MBBS, MD - Dermatology , Venereology & Lepros",
+	"speciality":"Psychologist",
 	"address":"Oklahoma, USA",
-	"next_available":"Available on Fri, 25 Mar",
-	"amount":"$500 - $2500",
 	"lat":53.4558571,
 	"lng":-2.1950372,
 	"icons":"default",
@@ -129,10 +111,8 @@ var locations =[{
 	}, {
 	"id":10,
 	"doc_name":"Dr. Olga Barlow",
-	"speciality":"MDS - Periodontology and Oral Implantology, BDS",
+	"speciality":"Psychologist",
 	"address":"Montana, USA",
-	"next_available":"Available on Fri, 25 Mar",
-	"amount":"$75 - $250",
 	"lat":53.458850,
 	"lng":-2.194549,
 	"icons":"default",
@@ -142,10 +122,8 @@ var locations =[{
 	}, {
 	"id":11,
 	"doc_name":"Dr. Julia Washington",
-	"speciality":"MBBS, MD - General Medicine, DM - Endocrinology",
+	"speciality":"Psychologist",
 	"address":"Oklahoma, USA",
-	"next_available":"Available on Fri, 25 Mar",
-	"amount":"$275 - $450",
 	"lat":53.461733,
 	"lng":-2.194502,
 	"icons":"default",
@@ -155,10 +133,8 @@ var locations =[{
 	}, {
 	"id":12,
 	"doc_name":"Dr. Shaun Aponte",
-	"speciality":"MBBS, MS - ENT, Diploma in Otorhinolaryngology (DLO)",
+	"speciality":"Psychologist",
 	"address":"Indiana, USA",
-	"next_available":"Available on Fri, 25 Mar",
-	"amount":"$150 - $350",
 	"lat":53.460548,
 	"lng":-2.190956,
 	"icons":"default",
@@ -219,31 +195,25 @@ function initialize() {
 
 function setInfo(marker) {
   var content = 
-'<div class="profile-widget" style="width: 100%; display: inline-block;">'+
-	'<div class="doc-img">'+
-		'<a href="' + marker.profile_link + '" tabindex="0" target="_blank">'+
-			'<img class="img-fluid" alt="' + marker.doc_name + '" src="' + marker.image + '">'+
-		'</a>'+
-	'</div>'+
-	'<div class="pro-content">'+
-		'<h3 class="title">'+
-			'<a href="' + marker.profile_link + '" tabindex="0">' + marker.doc_name + '</a>'+
-			'<i class="fas fa-check-circle verified"></i>'+
-		'</h3>'+
-		'<p class="speciality">' + marker.speciality + '</p>'+
-		'<div class="rating">'+
-			'<i class="fas fa-star filled"></i>'+
-			'<i class="fas fa-star filled"></i>'+
-			'<i class="fas fa-star filled"></i>'+
-			'<i class="fas fa-star filled"></i>'+
-			'<i class="fas fa-star"></i>'+
-			'<span class="d-inline-block average-rating"> (' + marker.total_review + ')</span>'+
+'<div class="card border-0" style="width: 100%; display: inline-block;">'+
+	'<div class="card-body">'+
+		'<div class="doc-img d-flex align-items-center">'+
+			'<a href="' + marker.profile_link + '" class="avatar flex-shrink-0 me-2 avatar-xl avatar-rounded" tabindex="0" target="_blank">'+
+				'<img class="img-fluid" alt="' + marker.doc_name + '" src="' + marker.image + '">'+
+			'</a>'+
+			'<div>'+
+				'<h6 class="title fs-16 mb-1">'+
+					'<a href="' + marker.profile_link + '" tabindex="0">' + marker.doc_name + '</a>'+
+					'<span class="badge bg-orange mt-1"><i class="fa-solid fa-star me-1"></i>5.0</span>'+
+				'</h6>'+
+				'<p class="speciality text-indigo">' + marker.speciality + '</p>'+
+			'</div>'+
 		'</div>'+
-		'<ul class="available-info">'+
-			'<li><i class="fas fa-map-marker-alt"></i> ' + marker.address + ' </li>'+
-			'<li><i class="far fa-clock"></i> ' + marker.next_available + '</li>'+
-			'<li><i class="far fa-money-bill-alt"></i> ' + marker.amount + '</li>'+
-		'</ul>'+
+		'<div class="pro-content">'+
+			'<ul class="available-info">'+
+				'<li><i class="fas fa-map-marker-alt"></i> ' + marker.address + ' </li>'+
+			'</ul>'+
+		'</div>'+
 	'</div>'+
 '</div>';
   infowindow.setContent(content);

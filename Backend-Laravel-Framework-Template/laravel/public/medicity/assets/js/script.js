@@ -7,11 +7,11 @@ Version      : 1.3
 (function ($) {
 	"use strict";
 
-	//Preloader
+    //Preloader
     $(window).on('load', function (event) {
         $('.js-preloader').delay(500).fadeOut(500);
     });
-	
+
 	// Stick Sidebar
 
 	if ($(window).width() > 767) {
@@ -227,10 +227,10 @@ Version      : 1.3
 		}
 	});
 
-	
-	
+
+
 	//owl carousel
-		
+
 	if($('.owl-carousel.special').length > 0) {
 		$('.owl-carousel.special').owlCarousel({
 			loop:true,
@@ -255,11 +255,11 @@ Version      : 1.3
 					items:4
 				}
 			}
-		})	
+		})
 	}
-	
+
 	//Eye Clicnic carousel
-	
+
 	if($('.owl-carousel.eye-clinic').length > 0) {
 		$('.owl-carousel.eye-clinic').owlCarousel({
 			loop:true,
@@ -267,7 +267,7 @@ Version      : 1.3
 			dots: true,
 			nav:true,
 			smartSpeed: 2000,
-			navText: [ '<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>' ], 
+			navText: [ '<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>' ],
 			responsive:{
 				0:{
 					items:1
@@ -285,11 +285,11 @@ Version      : 1.3
 					items:4
 				}
 			}
-		})	
+		})
 	}
-	
+
 	//Eye Blog carousel
-	
+
 	if($('.owl-carousel.eye-blogslider').length > 0) {
 		$('.owl-carousel.eye-blogslider').owlCarousel({
 			loop:true,
@@ -314,12 +314,12 @@ Version      : 1.3
 					items:4
 				}
 			}
-		})	
+		})
 	}
-	
-	
+
+
 	//Eye Testimonial carousel
-	
+
 	if($('.owl-carousel.eye-testislider').length > 0) {
 		$('.owl-carousel.eye-testislider').owlCarousel({
 			loop:true,
@@ -328,7 +328,7 @@ Version      : 1.3
 			nav:true,
 			smartSpeed: 2000,
 			navContainer: '.slide-11',
-			navText: [ '<i class="fa-solid fa-arrow-left"></i>', '<i class="fa-solid fa-arrow-right"></i>' ], 
+			navText: [ '<i class="fa-solid fa-arrow-left"></i>', '<i class="fa-solid fa-arrow-right"></i>' ],
 			responsive:{
 				0:{
 					items:1
@@ -337,11 +337,11 @@ Version      : 1.3
 					items:1
 				}
 			}
-		})	
+		})
 	}
 
 	//Eye Testimonial carousel
-	
+
 	if($('.owl-carousel.patient-review-slider').length > 0) {
 		$('.owl-carousel.patient-review-slider').owlCarousel({
 			loop:true,
@@ -349,7 +349,7 @@ Version      : 1.3
 			dots: true,
 			nav:false,
 			smartSpeed: 2000,
-			navText: [ '<i class="fa-solid fa-arrow-left"></i>', '<i class="fa-solid fa-arrow-right"></i>' ], 
+			navText: [ '<i class="fa-solid fa-arrow-left"></i>', '<i class="fa-solid fa-arrow-right"></i>' ],
 			responsive:{
 				0:{
 					items:1
@@ -358,7 +358,7 @@ Version      : 1.3
 					items:1
 				}
 			}
-		})	
+		})
 	}
 
 	// Specialities Slider
@@ -590,14 +590,14 @@ Version      : 1.3
 			autoplay: false,
 			infinite: true,
 			variableWidth: false,
-			slidesToShow: 7,
+			slidesToShow: 5,
 			slidesToScroll: 1,
 			swipeToSlide: true,
 			responsive: [
 				{
 					breakpoint: 1400,
 					settings: {
-						slidesToShow: 6,
+						slidesToShow: 5,
 						slidesToScroll: 1
 					}
 				},
@@ -942,7 +942,7 @@ Version      : 1.3
 		brandSliderClasses();
 		brandSlider.on('translated.owl.carousel', function(event) {
 			brandSliderClasses()
-		}); 
+		});
 	}
 
 	// Treatment Slider
@@ -1027,7 +1027,7 @@ Version      : 1.3
 			margin: 24,
 			dots: false,
 			nav: true,
-			smartSpeed: 2000,			
+			smartSpeed: 2000,
 			navText: ['<i class="fa-solid fa-chevron-left "></i>', '<i class="fa-solid fa-chevron-right"></i>'],
 			responsive: {
 				0: {
@@ -1057,7 +1057,7 @@ Version      : 1.3
 			margin: 24,
 			dots: false,
 			nav: true,
-			smartSpeed: 2000,			
+			smartSpeed: 2000,
 			navText: ['<i class="fa-solid fa-chevron-left "></i>', '<i class="fa-solid fa-chevron-right"></i>'],
 			responsive: {
 				0: {
@@ -1287,6 +1287,12 @@ Version      : 1.3
 			}]
 		});
 	}
+
+	// Reschedule Open Popup
+
+	$(document).ready(function() {
+		$('#reschedule-book-modal').modal('show');
+	});
 
 	//browse slider
 	if ($('.browse-slider').length > 0) {
@@ -1587,7 +1593,7 @@ Version      : 1.3
 					size: 155,
 					thickness: 12,
 					fill: {
-						color: '#65A30D'
+						color: '#04BD6C'
 					}
 				});
 			}
@@ -1890,9 +1896,9 @@ Version      : 1.3
 			  if (scroll > 95) {
 				$(".header-trans").css("background" , "#1e5d92");
 			  }
-	
+
 			  else{
-				  $(".header-trans").css("background" , "transparent");  	
+				  $(".header-trans").css("background" , "transparent");
 			  }
 		  })
 		})
@@ -1970,7 +1976,7 @@ Version      : 1.3
 			  }
 
 			  else{
-				  $(".header-fourteen").css("background" , "transparent");  	
+				  $(".header-fourteen").css("background" , "transparent");
 			  }
 		  })
 		})
@@ -1984,9 +1990,23 @@ Version      : 1.3
 			  }
 
 			  else{
-				  $(".header-fourteen").css("background" , "#fff");  	
+				  $(".header-fourteen").css("background" , "#fff");
 			  }
 		  })
+		})
+	}
+
+
+	if ($('.inner-header').length > 0) {
+		$(window).scroll(function () {
+			var scroll = $(window).scrollTop();
+			if (scroll > 35) {
+				$(".inner-header").addClass('fixed');
+			}
+
+			else {
+				$(".inner-header").removeClass('fixed');
+			}
 		})
 	}
 
@@ -2487,7 +2507,7 @@ Version      : 1.3
 			utilsScript: "assets/plugins/intltelinput/js/utils.js",
 		});
 	}
-	
+
 	// Otp Verfication
 
 	$('.digit-group').find('input').each(function () {
@@ -2525,7 +2545,7 @@ Version      : 1.3
 	});
 
 	// Mute Audio
-	
+
 	if($('.mute-bt').length > 0) {
 		$(".mute-bt").on('click', function(){
 			if($(this).hasClass("stop")) {
@@ -2542,7 +2562,7 @@ Version      : 1.3
 	}
 
 	// Mute Video
-	
+
 	if($('.mute-video').length > 0) {
 		$(".mute-video").on('click', function(){
 			if($(this).hasClass("stop")) {
@@ -2619,7 +2639,18 @@ Version      : 1.3
 			$(this).closest('.test').remove();
 			return false;
 		});
-	
+		$('#service7').change(function() {
+			if ($(this).prop('checked')) {
+			  $('.clinics-path').removeClass('d-none').addClass('d-block');
+			} else {
+			  $('.clinics-path').removeClass('d-block').addClass('d-none');
+			}
+		  });
+
+		  // Function to hide the clinics path when service8 or service9 is clicked
+		  $('#service8, #service9,#service10, #service11').change(function() {
+			$('.clinics-path').removeClass('d-block').addClass('d-none');
+		  });
 		$(".add-items").on('click', function () {
 				var itemscontent =
 				  '<tr class="test">' +
@@ -2684,7 +2715,7 @@ Version      : 1.3
 	});
 
 	// Swiper Slider
-	
+
 	if($('.swiper-slider-banner').length > 0 ){
 		var swiper = new Swiper(".swiper-slider-banner", {
 			effect: "cards",
@@ -3002,7 +3033,7 @@ Version      : 1.3
 			focusOnSelect: true
 
 		});
-	}	
+	}
 
 	// Video Player
 
@@ -3015,9 +3046,9 @@ Version      : 1.3
 	       if (currentVideo != this)
 	       this.pause();
 	    });
-	    if (currentVideo.paused){        
+	    if (currentVideo.paused){
 	        currentVideo.play();
-	    } else {       
+	    } else {
 	        currentVideo.pause();
 	    }
 	});
@@ -3114,11 +3145,11 @@ Version      : 1.3
 						'<option data-image="assets/img/icons/instagram-icon.svg">Instagram</option>' +
 					'</select>' +
 				'</div>' +
-				'<div class="input-block input-block-new flex-fill">' +													
+				'<div class="input-block input-block-new flex-fill">' +
 					'<input type="password" class="form-control" placeholder="Add Url">' +
 				'</div>' +
 				'</div>';
-		
+
 			$('.social-media-form').append(servcontent);
 
         if ($('.select-social-img').length > 0) {
@@ -3146,7 +3177,7 @@ Version      : 1.3
 						'<div class="input-block input-block-new">' +
 					'<label class="form-label">Type</label>' +
 				'<select class="select form-control">' +
-					'<option>Select</option>' +													
+					'<option>Select</option>' +
 					'<option>Direct Visit</option>' +
 					'<option>Video Call</option>' +
 				'</select>' +
@@ -3174,7 +3205,7 @@ Version      : 1.3
 				'<a href="#" class="delete-btn delete-medication trash text-danger"><i class="fa-solid fa-trash-can"></i></a>' +
 				'</div>' +
 				'</div>'
-		
+
 			$('.meditation-row').append(servcontent);
 
         if ($('.select').length > 0) {
@@ -3301,7 +3332,7 @@ Version      : 1.3
 	}
 
 	//Eye Blog carousel
-	
+
 	if($('.owl-carousel.slider-service').length > 0) {
 		$('.owl-carousel.slider-service').owlCarousel({
 			loop:true,
@@ -3309,7 +3340,7 @@ Version      : 1.3
 			dots: false,
 			nav:true,
 			smartSpeed: 2000,
-			navText: [ '<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>' ], 
+			navText: [ '<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>' ],
 			responsive:{
 				0:{
 					items:1
@@ -3324,7 +3355,7 @@ Version      : 1.3
 					items:3
 				}
 			}
-		})	
+		})
 	}
 
 	// Doctors Slider
@@ -3422,7 +3453,7 @@ Version      : 1.3
 			margin: 24,
 			dots: false,
 			nav: true,
-			smartSpeed: 2000,			
+			smartSpeed: 2000,
 			navText: ['<i class="fa-solid fa-chevron-left "></i>', '<i class="fa-solid fa-chevron-right"></i>'],
 			responsive: {
 				0: {
@@ -3449,8 +3480,8 @@ Version      : 1.3
 			margin: 24,
 			dots: false,
 			nav: true,
-			smartSpeed: 2000,	
-			navContainer: '.slide-1',		
+			smartSpeed: 2000,
+			navContainer: '.slide-1',
 			navText: ['<i class="fa-solid fa-chevron-left "></i>', '<i class="fa-solid fa-chevron-right"></i>'],
 			responsive: {
 				0: {
@@ -3469,7 +3500,7 @@ Version      : 1.3
 		})
 	}
 	//Eye Blog carousel
-	
+
 	if($('.owl-carousel.treatment-slider').length > 0) {
 		$('.owl-carousel.treatment-slider').owlCarousel({
 			loop:true,
@@ -3478,7 +3509,7 @@ Version      : 1.3
 			nav:true,
 			smartSpeed: 2000,
 			navContainer: '.slide-nav-02',
-			navText: [ '<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>' ], 
+			navText: [ '<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>' ],
 			responsive:{
 				0:{
 					items:1
@@ -3496,7 +3527,7 @@ Version      : 1.3
 					items: 2
 				}
 			}
-		})	
+		})
 	}
 
 	// Partners Slider
@@ -3534,8 +3565,8 @@ Version      : 1.3
 			margin: 24,
 			dots: false,
 			nav: true,
-			smartSpeed: 2000,	
-			navContainer: '.slide-2',		
+			smartSpeed: 2000,
+			navContainer: '.slide-2',
 			navText: ['<i class="fa-solid fa-chevron-left "></i>', '<i class="fa-solid fa-chevron-right"></i>'],
 			responsive: {
 				0: {
@@ -3567,7 +3598,7 @@ Version      : 1.3
 			autoplay: true,
 			smartSpeed: 2000,
 			navContainer: '.slide-nav-01',
-			navText: [ '<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>' ], 
+			navText: [ '<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>' ],
 			responsive: {
 				0: {
 					items: 1
@@ -3597,8 +3628,8 @@ Version      : 1.3
 			margin: 24,
 			dots: false,
 			nav: true,
-			smartSpeed: 2000,	
-			navContainer: '.slide-3',		
+			smartSpeed: 2000,
+			navContainer: '.slide-3',
 			navText: ['<i class="fa-solid fa-chevron-left "></i>', '<i class="fa-solid fa-chevron-right"></i>'],
 			responsive: {
 				0: {
@@ -3682,4 +3713,241 @@ Version      : 1.3
 		})
 	}
 
+	 // Payment
+  	$(".hospital-form .form-check-input").on("change", function (e) {
+		var radioval = $(this).val();
+		if (radioval === "all-hospital") {
+			$(".all-hospital").show();
+			$(".virtual-hospital").hide();
+			$(".appointment-hospital").hide();
+			$(".all-clinic").hide();
+		} else if (radioval === "virtual") {
+			$(".all-hospital").hide();
+			$(".virtual-hospital").show();
+			$(".appointment-hospital").hide();
+			$(".all-clinic").hide();
+
+		} else if (radioval === "appointment") {
+			$(".all-hospital").hide();
+			$(".virtual-hospital").hide();
+			$(".appointment-hospital").show();
+			$(".all-clinic").hide();
+		} else {
+			$(".credit-card-details").hide();
+			$(".all-hospital").hide();
+			$(".virtual-hospital").hide();
+			$(".appointment-hospital").hide();
+			$(".all-clinic").show();
+		}
+	});
+
+	// Checkbox Active
+
+	if ($('.service-item').length > 0) {
+		$('.service-item').on('click', function (e) {
+			e.stopPropagation();
+			$(this).toggleClass('active');
+			var checkbox = $(this).find('input[type="checkbox"]');
+			checkbox.prop('checked', !checkbox.prop('checked'));
+		});
+
+		// Click event specifically for the checkbox input
+		$('.service-item input[type="checkbox"]').on('click', function (e) {
+			$(this).closest('.service-item').toggleClass('active');
+			var checkbox = $(this).find('input[type="checkbox"]');
+			checkbox.prop('checked', !checkbox.prop('checked'));
+		});
+	}
+
+	$(document).on('click', '#filter_search', function() {
+		$('#filter_inputs').slideToggle("slow");
+	});
+
+	if ($('.spciality-slider').length > 0) {
+		$('.spciality-slider').owlCarousel({
+			loop: true,
+			margin: 24,
+			dots: false,
+			nav: true,
+			smartSpeed: 2000,
+			navContainer: '.spciality-nav',
+			navText: ['<i class="fa-solid fa-chevron-left"></i>', '<i class="fa-solid fa-chevron-right"></i>'],
+			responsive: {
+				0: {
+					items: 2
+				},
+				500: {
+					items: 3
+				},
+				768: {
+					items: 4
+				},
+				992: {
+					items: 6
+				},
+				1200: {
+					items: 8
+				}
+			}
+		})
+	}
+
+	if ($('.company-slider').length > 0) {
+		$('.company-slider').owlCarousel({
+			loop: true,
+			margin: 40,
+			dots: false,
+			nav: false,
+			smartSpeed: 2000,
+			autoplay: true,
+			responsive: {
+				0: {
+					items: 2
+				},
+				500: {
+					items: 3
+				},
+				768: {
+					items: 4
+				},
+				992: {
+					items: 6
+				},
+				1200: {
+					items: 8
+				}
+			}
+		})
+	}
+
+	if ($('.testimonials-slider').length > 0) {
+		$('.testimonials-slider').owlCarousel({
+			loop: true,
+			margin: 24,
+			dots: false,
+			nav: false,
+			smartSpeed: 2000,
+			responsive: {
+				0: {
+					items: 1
+				},
+				768: {
+					items: 2
+				},
+				992: {
+					items: 3
+				}
+			}
+		})
+	}
+
+	if ($('.doctors-slider').length > 0) {
+		$('.doctors-slider').owlCarousel({
+			loop: true,
+			margin: 24,
+			dots: false,
+			nav: false,
+			smartSpeed: 2000,
+			navContainer: '.doctor-nav',
+			navText: ['<i class="isax isax-arrow-left"></i>', '<i class="isax isax-arrow-right-1"></i>'],
+			responsive: {
+				0: {
+					items: 1
+				},
+				768: {
+					items: 2
+				},
+				992: {
+					items: 3
+				},
+				1400: {
+					items: 4
+				}
+			}
+		})
+	}
+
+	// Booking Wizard
+
+// $(document).ready(function () {
+// 	let progressVal = 0;
+// 	let businessType = 0;
+
+// 	$(".next_btns").on('click', function () {
+// 		$(this).parent().parent().parent().parent().next().fadeIn('slow');
+// 		$(this).parent().parent().parent().parent().css({
+// 			'display': 'none'
+// 		});
+// 		progressVal = progressVal + 1;
+// 		$('.progress-active').removeClass('progress-active').addClass('progress-activated').next().addClass('progress-active');
+// 	});
+// 	$(".prev_btns").on('click', function () {
+// 		$(this).parent().parent().parent().parent().prev().fadeIn('slow');
+// 		$(this).parent().parent().parent().parent().css({
+// 			'display': 'none'
+// 		});
+// 		progressVal = progressVal - 1;
+// 		$('.progress-active').removeClass('progress-active').prev().removeClass('progress-activated').addClass('progress-active');
+// 	});
+// });
+
+if ($('#datetimepickershow').length > 0) {
+	$('#datetimepickershow').datetimepicker({
+
+		inline: true,
+		sideBySide: true,
+		format: 'DD-MM-YYYY',
+		icons: {
+			up: "fas fa-angle-up",
+			down: "fas fa-angle-down",
+			next: 'fas fa-angle-right',
+			previous: 'fas fa-angle-left'
+		}
+
+	});
+}
+
+if($('.viewall-one').length > 0) {
+	$(".viewall-one").hide();
+	$(".viewall-button-one").on("click", function() {
+		 $(this).text($(this).text() === "Less" ? "View More" : "Less");
+		 $(".viewall-one").slideToggle(900);
+	});
+}
+if($('.viewall-two').length > 0) {
+	$(".viewall-two").hide();
+	$(".viewall-button-two").on("click", function() {
+		 $(this).text($(this).text() === "Less" ? "View More" : "Less");
+		 $(".viewall-two").slideToggle(900);
+	});
+}
+if($('.viewall-3').length > 0) {
+	$(".viewall-3").hide();
+	$(".viewall-button-3").on("click", function() {
+		 $(this).text($(this).text() === "Less" ? "View More" : "Less");
+		 $(".viewall-3").slideToggle(900);
+	});
+}
+if($('.viewall-4').length > 0) {
+	$(".viewall-4").hide();
+	$(".viewall-button-4").on("click", function() {
+		 $(this).text($(this).text() === "Less" ? "View More" : "Less");
+		 $(".viewall-4").slideToggle(900);
+	});
+}
+
 })(jQuery);
+
+document.addEventListener("DOMContentLoaded", function () {
+	const scrollers = document.querySelectorAll(".horizontal-slide");
+	scrollers.forEach((scroller) => {
+		scroller.setAttribute("data-animated", true);
+		const scrollerInner = scroller.querySelector(".slide-list");
+		const scrollerContent = Array.from(scrollerInner.children);
+		scrollerContent.forEach((item) => {
+			const duplicatedItem = item.cloneNode(true);
+			duplicatedItem.setAttribute("aria-hidden", true);
+			scrollerInner.appendChild(duplicatedItem);
+		});
+	});
+});

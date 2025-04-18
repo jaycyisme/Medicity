@@ -21,11 +21,15 @@ return new class extends Migration
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
 
+            $table->string('languages')->nullable();
+            $table->string('designation')->nullable();
+            $table->string('phone_number')->nullable();
             $table->string('gender')->nullable();
-            $table->foreignId('speciality_id')->nullable()->constrained('specialities')->onDelete('cascade');
+            // $table->foreignId('speciality_id')->nullable()->constrained('specialities')->onDelete('cascade');
             $table->foreignId('consultation_type_id')->nullable()->constrained('consultation_types')->onDelete('cascade');
-            $table->string('doctor_bio')->nullable();
+            $table->longText('doctor_bio')->nullable();
             $table->json('business_hours')->nullable();
+            $table->double('price_per_session')->nullable()->default(0);
 
             $table->boolean('status')->default(true);
 

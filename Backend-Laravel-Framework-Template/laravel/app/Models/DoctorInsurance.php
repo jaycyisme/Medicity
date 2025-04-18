@@ -12,7 +12,6 @@ class DoctorInsurance extends Model
 
     protected $fillable = [
         'name',
-        'description',
         'image_url',
         'doctor_id',
     ];

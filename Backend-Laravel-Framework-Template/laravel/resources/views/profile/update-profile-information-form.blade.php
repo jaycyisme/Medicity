@@ -1,23 +1,23 @@
 <x-form-section submit="updateProfileInformation">
     <x-slot name="title">
-        Thông tin tài khoản
+        Profile Setting
     </x-slot>
 
     <x-slot name="actionnotification">
         <x-action-message on="saved" class="">
-            Đã lưu!
+            Saved!
         </x-action-message>
     </x-slot>
 
     <x-slot name="form">
         @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
-        <x-label for="photo" value="Ảnh đại diện" />
+        <x-label for="photo" value="Avatar" />
         <x-input-error for="photo" />
 
         <div class="row" x-data="{photoName: null, photoPreview: null}">
             <div class="col-6">
                 <div x-show="! photoPreview">
-                    <img src="{{ $this->user->profile_photo_url }}" alt="{{ $this->user->name }}" class="rounded-circle wid-90 img-fluid img-thumbnail" style="width:128px; height:128px; background-position: center; background-size: cover;">
+                    <img src="@if(isset(Auth::user()->profile_photo_path)){{ asset('storage/'.Auth::user()->profile_photo_path) }}@else{{ asset('assets/images/user/avatar-1.jpg') }}@endif" alt="{{ $this->user->name }}" class="rounded-circle wid-90 img-fluid img-thumbnail" style="width:128px; height:128px; background-position: center; background-size: cover;">
                 </div>
                 <div class="mt-2" x-show="photoPreview" style="display: none;">
                     <img class="rounded-circle img-fluid wid-90 img-thumbnail" x-bind:style="'background-image: url(\'' + photoPreview + '\'); width:128px; height:128px; background-position: center; background-size: cover;'">
@@ -37,13 +37,13 @@
                 <div class="row align-items-center" style="height: 128px;">
                     <div class="col text-center">
                         <x-secondary-button type="button" class="btn-secondary" x-on:click.prevent="$refs.photo.click()">
-                            Tải ảnh đại diện
+                            Upload Avatar
                         </x-secondary-button>
                     </div>
                     @if ($this->user->profile_photo_path)
                     <div class="col text-center">
                         <x-secondary-button type="button" class="btn-danger" wire:click="deleteProfilePhoto">
-                            Xóa ảnh đại diện
+                            Delete Avatar
                         </x-secondary-button>
                     </div>
                     @endif
@@ -53,7 +53,7 @@
         @endif
         <div class="row mt-3">
             <x-input-error for="name"/>
-            <x-label for="name" value="Tên hiển thị" />
+            <x-label for="name" value="Name" />
             <x-input id="name" type="text" wire:model="state.name" required autocomplete="name" />
         </div>
         <div class="row mt-3">
@@ -72,14 +72,14 @@
                 </div>
                 @endif
             @endif
-            <x-label for="email" value="Địa chỉ Email" />
+            <x-label for="email" value="Email" />
             <x-input id="email" type="email" wire:model="state.email" required autocomplete="email" />
         </div>
     </x-slot>
 
     <x-slot name="actions">
-        <x-button class="btn-success" wire:loading.attr="disabled" wire:target="photo">
-            Lưu thông tin
+        <x-button class="btn btn-primary" wire:loading.attr="disabled" wire:target="photo">
+            Save
         </x-button>
     </x-slot>
 </x-form-section>

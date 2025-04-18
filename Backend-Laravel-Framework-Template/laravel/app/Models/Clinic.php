@@ -13,15 +13,12 @@ class Clinic extends Model
 
     protected $fillable = [
         'name',
-        'sub_name',
-        'address_detail',
-        'phone',
-        'city',
-        'district',
-        'ward',
-        'coordinates',
-        'business_hour',
+        'phone_number',
         'image_url',
+        'address_detail',
+        'coordinates',
+        'about_me',
+        'business_hour',
     ];
 
     protected $casts = [
@@ -30,21 +27,31 @@ class Clinic extends Model
 
     public function services()
     {
-        return $this->hasMany(Service::class)->withTrashed();
+        return $this->hasMany(Service::class);
     }
 
     public function doctorClinics()
     {
-        return $this->hasMany(DoctorClinic::class)->withTrashed();
+        return $this->hasMany(DoctorClinic::class);
     }
 
     public function clinicImages()
     {
-        return $this->hasMany(ClinicImage::class)->withTrashed();
+        return $this->hasMany(ClinicImage::class);
     }
 
     public function medicalRecord()
     {
-        return $this->hasMany(MedicalRecord::class)->withTrashed();
+        return $this->hasMany(MedicalRecord::class);
+    }
+
+    public function pharmacyReviews()
+    {
+        return $this->hasMany(PharmacyReview::class, 'pharmacy_id');
+    }
+
+    public function pharmacyAward()
+    {
+        return $this->hasMany(PharmacyAward::class, 'pharmacy_id');
     }
 }

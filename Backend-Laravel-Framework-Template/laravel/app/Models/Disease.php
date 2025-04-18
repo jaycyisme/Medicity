@@ -22,18 +22,19 @@ class Disease extends Model
         'image_url',
         'doctor_name',
         'doctor_image',
+        'meal_plan',
         'doctor_overview',
         'body_part_id',
         'target_group_id',
-        'seasonal_group_id',
-        'speciality_group_id',
+        'seasonal_id',
+        'speciality_id',
     ];
 
     protected $casts = [
         'body_part_id' => 'integer',
         'target_group_id' => 'integer',
-        'seasonal_group_id' => 'integer',
-        'speciality_group_id' => 'integer',
+        'seasonal_id' => 'integer',
+        'speciality_id' => 'integer',
     ];
 
     public function bodyPart()
@@ -48,23 +49,18 @@ class Disease extends Model
 
     public function seasonalGroup()
     {
-        return $this->belongsTo(SeasonalDisease::class, 'seasonal_group_id');
+        return $this->belongsTo(SeasonalDisease::class, 'seasonal_id');
     }
 
     public function specialityGroup()
     {
-        return $this->belongsTo(Speciality::class, 'speciality_group_id');
+        return $this->belongsTo(Speciality::class, 'speciality_id');
     }
 
 
     public function diseaseProducts()
     {
         return $this->hasMany(DiseaseProduct::class);
-    }
-
-    public function diseaseMealPlans()
-    {
-        return $this->hasMany(DiseaseMealPlan::class);
     }
 
     public function diseaseDoctors()
