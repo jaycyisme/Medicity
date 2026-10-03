@@ -1,0 +1,159 @@
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+h5, .h5 {
+    font-size: 1rem;
+  }
+
+.cart-total-price {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    border: solid 1px silver;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.cart-buy-button {
+    width: 100%;
+}
+
+.post-author span {
+    display: inline-block;
+    max-width: 150px; /* Điều chỉnh độ rộng phù hợp */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+}
+
+.MacroModalGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(104px, 104px));
+}
+
+.option-cacl-title {
+    width: fit-content;
+}
+
+
+/*---------------------------------
+     Preloader CSS
+-----------------------------------*/
+.absCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .loaderPill {
+    text-align: center;
+  }
+  .loaderPill .loaderPill-anim {
+    height: 160px;
+  }
+  .loaderPill .loaderPill-anim .loaderPill-anim-bounce {
+    animation: loaderPillBounce 1800ms linear infinite;
+  }
+  .loaderPill .loaderPill-anim .loaderPill-anim-bounce .loaderPill-anim-flop {
+    transform-origin: 50% 50%;
+    animation: loaderPillFlop 1800ms linear infinite;
+  }
+  .loaderPill .loaderPill-anim .loaderPill-anim-bounce .loaderPill-anim-flop .loaderPill-pill {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 80px;
+    height: 30px;
+    border-radius: 15px;
+    border: 1px solid #2490EB;
+    background-image: linear-gradient(to right, #2490EB 50%, #ffffff 50%);
+  }
+  .loaderPill .loaderPill-floor {
+    display: block;
+    text-align: center;
+  }
+  .loaderPill .loaderPill-floor .loaderPill-floor-shadow {
+    display: inline-block;
+    width: 70px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: color(#2490EB 26%);
+    transform: translateY(-15px);
+    animation: loaderPillScale 1800ms linear infinite;
+  }
+
+  @keyframes loaderPillBounce {
+    0% {
+      transform: translateY(123px);
+      animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    25% {
+      transform: translateY(40px);
+      animation-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    }
+    50% {
+      transform: translateY(120px);
+      animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    75% {
+      transform: translateY(20px);
+      animation-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    }
+    100% {
+      transform: translateY(120px);
+    }
+  }
+  @keyframes loaderPillFlop {
+    0% {
+      transform: rotate(0);
+    }
+    25% {
+      transform: rotate(90deg);
+    }
+    50% {
+      transform: rotate(180deg);
+    }
+    75% {
+      transform: rotate(450deg);
+    }
+    100% {
+      transform: rotate(720deg);
+    }
+  }
+  @keyframes loaderPillScale {
+    0% {
+      transform: translateY(-15px) scale(1, 1);
+      animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    25% {
+      transform: translateY(-15px) scale(0.7, 1);
+      animation-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    }
+    50% {
+      transform: translateY(-15px) scale(1, 1);
+      animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    75% {
+      transform: translateY(-15px) scale(0.6, 1);
+      animation-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    }
+    100% {
+      transform: translateY(-15px) scale(1, 1);
+    }
+  }
+  .loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 110%;
+    height: 110%;
+    background: #fff;
+    z-index: 200000;
+    overflow-x: hidden !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }

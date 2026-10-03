@@ -1,0 +1,48 @@
+<x-app-layout>
+    <x-slot name="pageHeader">
+        Laboratory Test Management
+    </x-slot>
+
+    <div class="col-sm-12">
+        <div class="card mt-3">
+            <div class="card-header d-flex align-items-center justify-content-between py-3">
+                <h5>Update Laboratory Test ID: {{ $laboratory_test->id }}</h5>
+                <a class="btn btn-lg btn-info" href="{{ route('laboratory-test.index') }}">
+                    Back
+                </a>
+            </div>
+            <div class="card-body">
+                <form class="form" method="POST" action="{{ route('laboratory-test.edit', $laboratory_test->id) }}">
+                    @csrf
+                    <div class="mb-3">
+                        <x-label for="name" value="Name" />
+                        <x-input value="{{ $laboratory_test->name }}" type="text" id="name" name="name" />
+                        <x-input-error for="name" />
+
+                        <x-label for="price" value="Price" />
+                        <x-input value="{{ $laboratory_test->price }}" type="text" id="price" name="price" />
+                        <x-input-error for="price" />
+
+                        {{-- <div class="image-file mb-3">
+                            <x-label class="form-label d-flex align-items-center" value="Thumbnail" />
+                            <input type="file" id="main_image" class="d-none" accept="image/*">
+                            <x-input-error for="image" />
+                            <label class="btn btn-outline-secondary" for="main_image">
+                                <i class="ti ti-upload me-2"></i> Click to Upload
+                            </label>
+                            <div class="image-preview mt-3">
+                                <img id="imagePreview" src="{{ isset($category->image_url) ? asset('storage/Category/' . $category->image_url) : asset('assets/images/user/avatar-1.jpg') }}"  class="img-fluid rounded shadow-sm d-block category-image-preview"/>
+                            </div>
+                        </div> --}}
+                    </div>
+
+                    {{-- <input type="hidden" value="{{ $category->image_url }}" name="image_url" id="image_url" /> --}}
+
+                    <div class="mb-3">
+                        <x-button class="btn-primary" type="submit">Update</x-button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</x-app-layout>
